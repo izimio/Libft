@@ -28,4 +28,8 @@ char *ft_strchr(const char *str, int value);
 char *ft_strrchr(const char *str, char c);
 char *ft_strnstr(const char *s1, const char *s2, size_t len);
 int	    ft_strncmp(const char *s1, const char *s2, size_t n);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_itoa(int nb);
+char		**ft_split(char const *s, char c);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 #endif
