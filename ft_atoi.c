@@ -1,11 +1,10 @@
 #include "libft.h"
-#include <stdio.h>
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int num;
-	long res;
+	int		i;
+	int		num;
+	long	res;
 
 	i = 0;
 	num = 1;

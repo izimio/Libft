@@ -1,10 +1,10 @@
-# include "libft.h"
+#include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int i;
+	int i;
 
-    i = -1;
-    while (s[++i])
-        ft_putchar_fd(s[i],fd);
+	i = -1;
+	while (s[++i])
+		ft_putchar_fd(s[i], fd);
 }
