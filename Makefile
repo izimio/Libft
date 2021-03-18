@@ -1,4 +1,7 @@
-SRCS	=   ft_atoi.c ft_strlen.c
+SRCS	=   ft_atoi.c ft_strlen.c ft_strlcpy.c ft_toupper.c \
+			ft_tolower.c ft_isalnum.c \
+			ft_isascii.c ft_isprint.c
+
 SRCS_bonus = 
 
 OBJS = ${SRCS:.c=.o}
