@@ -8,7 +8,7 @@ SRCS	=   ft_atoi.c ft_strlen.c ft_strlcpy.c ft_toupper.c \
 			ft_strdup.c ft_strlcat.c ft_strchr.c \
 			ft_strrchr.c ft_strnstr.c \
 			ft_strncmp.c ft_substr.c ft_itoa.c ft_split.c \
-			ft_strmapi.c
+			ft_strmapi.c ft_strtrim.c ft_strjoin.c
 
 
 SRCS_bonus = 
