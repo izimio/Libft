@@ -5,7 +5,7 @@ int		ft_atoi(const char *str)
 {
 	int i;
 	int num;
-	int res;
+	long res;
 
 	i = 0;
 	num = 1;
