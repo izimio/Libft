@@ -1,24 +1,22 @@
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+char *ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t i;
 	size_t b;
 
-	b = 0;
-	i = -1;
+	i = 0;
 	if (!s2[0])
 		return ((char *)s1);
-	while ((++i < len) && s1[i])
+	while (s1[i] && i < len)
 	{
-		if (s1[i] == s2[b])
-		{
+		b = 0;
+		while (s1[i + b] && s2[b] && i + b < len &&
+		s1[i + b] == s2[b])
 			b++;
-			if (s2[b] == '\0')
-				return ((char *)&s1[i - (b - 1)]);
-		}
-		else
-			b = 0;
+		if (!s2[b])
+			return ((char *)&s1[i]);
+		i++;
 	}
 	return (NULL);
 }

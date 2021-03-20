@@ -9,42 +9,42 @@ SRCS	=   ft_atoi.c ft_strlen.c ft_strlcpy.c ft_toupper.c \
 			ft_strrchr.c ft_strnstr.c \
 			ft_strncmp.c ft_substr.c ft_itoa.c ft_split.c \
 			ft_strmapi.c ft_strtrim.c ft_strjoin.c \
-			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
+SRCBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c \
+			ft_lstlast.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c
 
-SRCS_bonus = 
+OBJBONUS = ${SRCBONUS:.c=.o}
 
 OBJS = ${SRCS:.c=.o}
 
-OBJS_bonus = ${SRCS_bonus:.c=.o}
+HEADER = libft.h
 
 NAME = libft.a
-CC = gcc
-AR ?= ar
-RM ?= rm -f
-CFLAGS = -Wall -Wextra -Werror -I.
 
-.c.o:
-	$(CC) $(CFLAGS) -c $<
+CC = gcc
+
+RM = rm -f
+
+FLAGS = -Wall -Wextra -Werror
+
+%.o:	%.c ${HEADER}
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME):	${OBJS}
-	${AR} rc ${NAME} ${OBJS}
+			ar rc ${NAME} ${OBJS}
 
-$(OBJS) : libft.h
+bonus:		${OBJBONUS}
+			@ar rc ${NAME} ${OBJBONUS}
 
-$(OBJS_bonus) : libft.h
+all:		${NAME}
+			
+clean:
+			${RM} ${OBJS} ${OBJBONUS}
 
-bonus:		${OBJS} ${OBJS_bonus}
-	${AR} rc ${NAME} ${OBJS} ${OBJS_bonus}
+fclean:		clean
+			${RM} ${NAME}
 
-all : 		${NAME}
+re: fclean all
 
-clean :
-	${RM} ${OBJS} ${OBJS_bonus}
-
-fclean : 	clean
-	${RM} ${NAME}
-
-re :		fclean all
-
-.PHONY: all clean fclean re libft.a bonus
+.PHONY: all bonus clean fclean re

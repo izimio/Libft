@@ -20,19 +20,19 @@ static int	count(int nb)
 	return (i);
 }
 
-char		*ft_itoa(int nb)
+char		*ft_itoa(int n)
 {
 	long	nbr;
 	int		i;
 	char	*toa;
 
-	i = count(nb);
-	nbr = nb;
+	i = count(n);
+	nbr = n;
 	toa = ft_calloc(i + 1, 1);
 	if (!toa)
 		return (NULL);
 	toa[0] = '0';
-	if (nb == 0)
+	if (n == 0)
 		return (toa);
 	if (nbr < 0)
 	{
